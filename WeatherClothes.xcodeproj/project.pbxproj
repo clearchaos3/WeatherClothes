@@ -19,6 +19,8 @@
 		2D93EE7524B381DE008A7E5C /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93EE7324B381DE008A7E5C /* Clothes.swift */; };
 		2DA97F5B24AECED6009B609E /* barcelona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA97F5A24AECED6009B609E /* barcelona.ttf */; };
 		2DA97F5C24AECED6009B609E /* barcelona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA97F5A24AECED6009B609E /* barcelona.ttf */; };
+		2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DED2B1624B3C02300F86192 /* Colors.xcassets */; };
+		2DED2B1824B3C02300F86192 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DED2B1624B3C02300F86192 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		2D93EE7324B381DE008A7E5C /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		2DA97F5A24AECED6009B609E /* barcelona.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = barcelona.ttf; sourceTree = "<group>"; };
 		2DBB4B7624AEB9F100A3ED85 /* Shorelines Script Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shorelines Script Bold.otf"; sourceTree = "<group>"; };
+		2DED2B1624B3C02300F86192 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 				2DA97F5A24AECED6009B609E /* barcelona.ttf */,
 				2D25313224AEB8C500DBB723 /* Shorelines Script Bold.otf */,
 				2D25311324AEB5D200DBB723 /* Assets.xcassets */,
+				2DED2B1624B3C02300F86192 /* Colors.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -191,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA97F5B24AECED6009B609E /* barcelona.ttf in Resources */,
+				2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */,
 				2D25312824AEB5D200DBB723 /* Assets.xcassets in Resources */,
 				2D25313324AEB8C500DBB723 /* Shorelines Script Bold.otf in Resources */,
 			);
@@ -201,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA97F5C24AECED6009B609E /* barcelona.ttf in Resources */,
+				2DED2B1824B3C02300F86192 /* Colors.xcassets in Resources */,
 				2D25312924AEB5D200DBB723 /* Assets.xcassets in Resources */,
 				2D25313424AEB8C500DBB723 /* Shorelines Script Bold.otf in Resources */,
 			);

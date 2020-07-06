@@ -6,94 +6,64 @@
 //
 
 import SwiftUI
-//bg
-let red: Double = 248 / 255
-let green: Double = 211 / 255
-let blue: Double = 176 / 255
-//brown
-let red2: Double = 187 / 255
-let green2: Double = 108 / 255
-let blue2: Double = 80 / 255
-//dak blue
-let red3: Double = 124 / 255
-let green3: Double = 140 / 255
-let blue3: Double = 144 / 255
-//light blue
-let red4: Double = 170 / 255
-let green4: Double = 190 / 255
-let blue4: Double = 194 / 255
-//purple
-let red5: Double = 128 / 255
-let green5: Double = 86 / 255
-let blue5: Double = 183 / 255
 
 struct ContentView: View {
     var clothing: [Clothing] = []
     
     var body: some View {
         ZStack {
-            Color(red: red, green: green, blue: blue)
+            Color("background")
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                VStack {
-                    HStack{
-                        VStack {
-                            
-                            Image(systemName: "sun.max")
-                                .resizable()
-                                .frame(width: 90, height: 90)
-                            
+                HStack{
+                    VStack{
+                        Image(systemName: "sun.max")
+                            .resizable()
+                            .frame(width: 90, height: 90)
+                    }
+                    VStack{
+                        HStack{
+                            Text("Today will be . . .")
+                                .foregroundColor(Color("brownTitle"))
                         }
-                        VStack {
-                            HStack {
-                                Text("Today will be . . .")
-                                    .foregroundColor(Color(red: red2, green: green2, blue: blue2))
-                            }
-                            HStack {
-                                VStack{
-                                    HStack {
-                                        HStack {
-                                            Image(systemName: "arrow.up")
-                                                .resizable()
-                                                .frame(width: 25.0, height: 35.0)
-                                            Text("90°")
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        .foregroundColor(Color(red: red3, green: green3, blue: blue3))
-
-                                        Text("Mostly Sunny")
-                                            .font(.custom("barcelona", size: 35))
-                                            .multilineTextAlignment(.trailing)
+                        HStack{
+                            VStack{
+                                HStack{
+                                    HStack{
+                                        Image(systemName: "arrow.up")
+                                            .resizable()
+                                            .frame(width: 25.0, height: 35.0)
+                                        Text("90°")
+                                            .multilineTextAlignment(.leading)
                                     }
-                                    HStack {
-                                        HStack {
-                                            Image(systemName: "arrow.down")
-                                                .resizable()
-                                                .frame(width: 25.0, height: 35.0)
-                                            Text("70°")
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        .foregroundColor(Color(red: red4, green: green4, blue: blue4))
+                                    .foregroundColor(Color("maxBlue"))
 
-                                        Text("Rain : 0 %")
-                                            .font(.custom("barcelona", size: 35))
-                                            .multilineTextAlignment(.trailing)
+                                    Text("Mostly Sunny")
+                                        .font(.custom("barcelona", size: 35))
+                                        .multilineTextAlignment(.trailing)
+                                }
+                                HStack{
+                                    HStack{
+                                        Image(systemName: "arrow.down")
+                                            .resizable()
+                                            .frame(width: 25.0, height: 35.0)
+                                        Text("70°")
+                                            .multilineTextAlignment(.leading)
                                     }
+                                    .foregroundColor(Color("minBlue"))
+
+                                    Text("Rain : 0 %")
+                                        .font(.custom("barcelona", size: 35))
+                                        .multilineTextAlignment(.trailing)
                                 }
                             }
-                            
                         }
-                        
                     }
-                    
-                    .padding()
-                    
-                            
                 }
+                .padding()
                 .font(.custom("barcelona", size: 50))
                 .foregroundColor(.white)
-                
-                
+                Spacer()
                 VStack{
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 16)],spacing: 16) {
                         ForEach(clothing) { clothing in
@@ -106,10 +76,9 @@ struct ContentView: View {
                 
                 VStack {
                     Text("Don't forget your sunglasses!")
-                        .foregroundColor(Color(red: red5, green: green5, blue: blue5))
+                        .foregroundColor(Color("purpleAccent"))
                         .font(.custom("barcelona", size: 30))
                 }
-              
             }
         }
     }
@@ -127,8 +96,6 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
-
 struct ClothingCell: View {
     var clothing: Clothing
     var body: some View {
@@ -136,5 +103,4 @@ struct ClothingCell: View {
                 .resizable()
                 .frame(width: 100, height: 100)
     }
-
 }
