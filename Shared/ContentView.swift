@@ -26,36 +26,34 @@ struct ContentView: View {
                             Text("Today will be . . .")
                                 .foregroundColor(Color("brownTitle"))
                         }
-                        HStack{
-                            VStack{
+                        VStack{
+                            HStack{
                                 HStack{
-                                    HStack{
-                                        Image(systemName: "arrow.up")
-                                            .resizable()
-                                            .frame(width: 25.0, height: 35.0)
-                                        Text("90°")
-                                            .multilineTextAlignment(.leading)
-                                    }
-                                    .foregroundColor(Color("maxBlue"))
-
-                                    Text("Mostly Sunny")
-                                        .font(.custom("barcelona", size: 35))
-                                        .multilineTextAlignment(.trailing)
+                                    Image(systemName: "arrow.up")
+                                        .resizable()
+                                        .frame(width: 25.0, height: 35.0)
+                                    Text("90°")
+                                        .multilineTextAlignment(.leading)
                                 }
+                                .foregroundColor(Color("maxBlue"))
+
+                                Text("Mostly Sunny")
+                                    .font(.custom("barcelona", size: 35))
+                                    .multilineTextAlignment(.trailing)
+                            }
+                            HStack{
                                 HStack{
-                                    HStack{
-                                        Image(systemName: "arrow.down")
-                                            .resizable()
-                                            .frame(width: 25.0, height: 35.0)
-                                        Text("70°")
-                                            .multilineTextAlignment(.leading)
-                                    }
-                                    .foregroundColor(Color("minBlue"))
-
-                                    Text("Rain : 0 %")
-                                        .font(.custom("barcelona", size: 35))
-                                        .multilineTextAlignment(.trailing)
+                                    Image(systemName: "arrow.down")
+                                        .resizable()
+                                        .frame(width: 25.0, height: 35.0)
+                                    Text("70°")
+                                        .multilineTextAlignment(.leading)
                                 }
+                                .foregroundColor(Color("minBlue"))
+
+                                Text("Rain : 0 %")
+                                    .font(.custom("barcelona", size: 35))
+                                    .multilineTextAlignment(.trailing)
                             }
                         }
                     }
@@ -84,6 +82,16 @@ struct ContentView: View {
     }
 }
 
+struct ClothingCell: View {
+    var clothing: Clothing
+    var body: some View {
+            Image(clothing.imageName)
+                .resizable()
+                .frame(width: 100, height: 100)
+    }
+}
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -96,11 +104,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct ClothingCell: View {
-    var clothing: Clothing
-    var body: some View {
-            Image(clothing.imageName)
-                .resizable()
-                .frame(width: 100, height: 100)
-    }
-}
