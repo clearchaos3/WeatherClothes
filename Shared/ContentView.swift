@@ -28,7 +28,7 @@ let green5: Double = 86 / 255
 let blue5: Double = 183 / 255
 
 struct ContentView: View {
-    
+    var clothing: [Clothing] = []
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct ContentView: View {
                             Image(systemName: "sun.max")
                                 .resizable()
                                 .frame(width: 90, height: 90)
-                            Spacer()
+                            
                         }
                         VStack {
                             HStack {
@@ -81,7 +81,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            Spacer()
+                            
                         }
                         
                     }
@@ -92,85 +92,24 @@ struct ContentView: View {
                 }
                 .font(.custom("barcelona", size: 50))
                 .foregroundColor(.white)
-                VStack {
-                    Path{ path in
-                                path.move(to: CGPoint(x: 0, y: 0))
-                                path.addLine(to: CGPoint(x: 2500, y: 0))
-                            }
-                            .stroke(style: StrokeStyle(lineWidth: 3, dash: [15]))
-                    .foregroundColor(Color(red: red2, green: green2, blue: blue2))
-                }
-                .frame(height: 3)
+                
+                
                 VStack{
-                    HStack {
-                        Spacer()
-                        VStack{
-                            Image("shirt")
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .rotationEffect(.degrees(-20))
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 16)],spacing: 16) {
+                        ForEach(clothing) { clothing in
+                            ClothingCell(clothing: clothing)
+                                .frame(maxWidth: 100)
                         }
-                        Spacer()
-                        VStack{
-                            Image("cap")
-                                .resizable()
-                                .frame(width: 79, height: 58)
-                                .rotationEffect(.degrees(20))
-                        }
-                        Spacer()
-                    }
-                    .padding()
-                    HStack {
-                        Spacer()
-                        VStack{
-                            Image("pants")
-                                .resizable()
-                                .frame(width: 217/4, height: 579/4)
-                                .rotationEffect(.degrees(20))
-                        }
-                        Spacer()
-                        VStack{
-                            Image("sunglasses")
-                                .resizable()
-                                .frame(width: 248/2, height: 143/2)
-                                .rotationEffect(.degrees(-20))
-                        }
-                        Spacer()
-                    }
-                    .padding()
-                    HStack {
-                        Spacer()
-                        VStack{
-                            Image("sneakers")
-                                .resizable()
-                                .frame(width: 192/2, height: 102/2)
-                                .rotationEffect(.degrees(-20))
-                        }
-                        Spacer()
-                    }
-                    .padding()
-                    VStack {
-                        Path{ path in
-                                    path.move(to: CGPoint(x: 0, y: 0))
-                                    path.addLine(to: CGPoint(x: 2500, y: 0))
-                                }
-                                .stroke(style: StrokeStyle(lineWidth: 3, dash: [15]))
-                                .foregroundColor(Color(red: red2, green: green2, blue: blue2))
-                                .frame(height: 3)
-                        Text("Don't forget your sunglasses!")
-                            .foregroundColor(Color(red: red5, green: green5, blue: blue5))
-                            .font(.custom("barcelona", size: 30))
-                        Path{ path in
-                                    path.move(to: CGPoint(x: 0, y: 0))
-                                    path.addLine(to: CGPoint(x: 2500, y: 0))
-                                }
-                                
-                                .stroke(style: StrokeStyle(lineWidth: 3, dash: [15]))
-                                .foregroundColor(Color(red: red2, green: green2, blue: blue2))
-                        .frame(height: 3)
                     }
                 }
-              Spacer()
+                Spacer()
+                
+                VStack {
+                    Text("Don't forget your sunglasses!")
+                        .foregroundColor(Color(red: red5, green: green5, blue: blue5))
+                        .font(.custom("barcelona", size: 30))
+                }
+              
             }
         }
     }
@@ -179,7 +118,23 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView().previewDevice("iPhone 11 Pro")
+            ContentView(clothing: testData
+            ).previewDevice("iPad Pro")
+            
+            ContentView(clothing: testData
+            ).previewDevice("iPhone 11 Pro")
         }
     }
+}
+
+
+
+struct ClothingCell: View {
+    var clothing: Clothing
+    var body: some View {
+            Image(clothing.imageName)
+                .resizable()
+                .frame(width: 100, height: 100)
+    }
+
 }
