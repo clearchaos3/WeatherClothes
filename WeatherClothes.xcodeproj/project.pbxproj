@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D100A1724B4A0FF002E6DD7 /* WeatherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D100A1624B4A0FF002E6DD7 /* WeatherList.swift */; };
+		2D100A1824B4A0FF002E6DD7 /* WeatherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D100A1624B4A0FF002E6DD7 /* WeatherList.swift */; };
 		2D25312424AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */; };
 		2D25312524AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */; };
 		2D25312624AEB5D200DBB723 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311224AEB5D200DBB723 /* ContentView.swift */; };
@@ -19,11 +21,14 @@
 		2D93EE7524B381DE008A7E5C /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93EE7324B381DE008A7E5C /* Clothes.swift */; };
 		2DA97F5B24AECED6009B609E /* barcelona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA97F5A24AECED6009B609E /* barcelona.ttf */; };
 		2DA97F5C24AECED6009B609E /* barcelona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA97F5A24AECED6009B609E /* barcelona.ttf */; };
+		2DD8CD2A24B408B800D0C540 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD8CD2924B408B800D0C540 /* Weather.swift */; };
+		2DD8CD2B24B408B800D0C540 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD8CD2924B408B800D0C540 /* Weather.swift */; };
 		2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DED2B1624B3C02300F86192 /* Colors.xcassets */; };
 		2DED2B1824B3C02300F86192 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DED2B1624B3C02300F86192 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D100A1624B4A0FF002E6DD7 /* WeatherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherList.swift; sourceTree = "<group>"; };
 		2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClothesApp.swift; sourceTree = "<group>"; };
 		2D25311224AEB5D200DBB723 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D25311324AEB5D200DBB723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		2D93EE7324B381DE008A7E5C /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		2DA97F5A24AECED6009B609E /* barcelona.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = barcelona.ttf; sourceTree = "<group>"; };
 		2DBB4B7624AEB9F100A3ED85 /* Shorelines Script Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shorelines Script Bold.otf"; sourceTree = "<group>"; };
+		2DD8CD2924B408B800D0C540 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		2DED2B1624B3C02300F86192 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +80,8 @@
 				2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */,
 				2D25311224AEB5D200DBB723 /* ContentView.swift */,
 				2D93EE7324B381DE008A7E5C /* Clothes.swift */,
+				2DD8CD2924B408B800D0C540 /* Weather.swift */,
+				2D100A1624B4A0FF002E6DD7 /* WeatherList.swift */,
 				2DA97F5A24AECED6009B609E /* barcelona.ttf */,
 				2D25313224AEB8C500DBB723 /* Shorelines Script Bold.otf */,
 				2D25311324AEB5D200DBB723 /* Assets.xcassets */,
@@ -219,6 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD8CD2A24B408B800D0C540 /* Weather.swift in Sources */,
+				2D100A1724B4A0FF002E6DD7 /* WeatherList.swift in Sources */,
 				2D93EE7424B381DE008A7E5C /* Clothes.swift in Sources */,
 				2D25312624AEB5D200DBB723 /* ContentView.swift in Sources */,
 				2D25312424AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */,
@@ -229,6 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD8CD2B24B408B800D0C540 /* Weather.swift in Sources */,
+				2D100A1824B4A0FF002E6DD7 /* WeatherList.swift in Sources */,
 				2D93EE7524B381DE008A7E5C /* Clothes.swift in Sources */,
 				2D25312724AEB5D200DBB723 /* ContentView.swift in Sources */,
 				2D25312524AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */,
