@@ -14,9 +14,6 @@ struct ContentView: View {
     
     var clothing: [Clothing] = []
     
-    
-    
-    
     func getWeatherData() {
         let jsonURLString = "https://api.openweathermap.org/data/2.5/onecall?lat=38.7892&lon=-90.3226&exclude=current,minutely,hourly&units=imperial&appid=ec6de2817bcdb0f0cab7424c07dada17"
         // make URL
@@ -68,7 +65,7 @@ struct ContentView: View {
                                 }
                                 .foregroundColor(Color("maxBlue"))
 
-                                Text("Mostly Sunny")
+                                Text(self.description.capitalized)
                                     .font(.custom("barcelona", size: 35))
                                     .multilineTextAlignment(.trailing)
                             }
@@ -105,7 +102,7 @@ struct ContentView: View {
                 Spacer()
                 
                 VStack {
-                    Text(self.description.capitalized)
+                    Text("Don't forget your sunglasses!")
                         .foregroundColor(Color("purpleAccent"))
                         .font(.custom("barcelona", size: 40))
                 }
