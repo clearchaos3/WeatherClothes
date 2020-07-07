@@ -6,6 +6,12 @@
 //
 
 import SwiftUI
+import Keys
+
+//using cocoapods-keys
+let keys = WeatherClothesKeys()
+let appid = keys.appid
+
 
 struct ContentView: View {
     @State var min: Float = 0.0
@@ -15,7 +21,9 @@ struct ContentView: View {
     var clothing: [Clothing] = []
     
     func getWeatherData() {
-        let jsonURLString = "https://api.openweathermap.org/data/2.5/onecall?lat=38.7892&lon=-90.3226&exclude=current,minutely,hourly&units=imperial&appid=ec6de2817bcdb0f0cab7424c07dada17"
+        let jsonURLString = "https://api.openweathermap.org/data/2.5/onecall?lat=38.7892&lon=-90.3226&exclude=current,minutely,hourly&units=imperial&appid=" + String(appid)
+        
+        
         // make URL
         guard let url = URL(string: jsonURLString) else { return }
         // create a session
