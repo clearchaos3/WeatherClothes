@@ -14,7 +14,7 @@ struct Clothing: Identifiable {
     var imageName: String
 }
 
-let testData = [
+let clothingTypes = [
     Clothing(name: "T-Shirt", imageName: "011-shirt"),
     Clothing(name: "Jeans", imageName: "025-jeans"),
     Clothing(name: "Sun Hat", imageName: "111-pamela")

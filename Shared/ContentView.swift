@@ -147,7 +147,7 @@ struct ClothingCell: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(clothing: testData
+            ContentView(clothing: clothingTypes
             ).previewDevice("iPhone 11 Pro")
         }
     }
