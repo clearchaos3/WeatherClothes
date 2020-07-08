@@ -6,6 +6,7 @@
 	<array>
 		<string>Shorelines Script Bold.otf</string>
 		<string>barcelona.ttf</string>
+		<string>sweet purple.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

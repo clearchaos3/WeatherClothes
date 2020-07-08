@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,8 +16,8 @@
 		2D25312724AEB5D200DBB723 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311224AEB5D200DBB723 /* ContentView.swift */; };
 		2D25312824AEB5D200DBB723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D25311324AEB5D200DBB723 /* Assets.xcassets */; };
 		2D25312924AEB5D200DBB723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D25311324AEB5D200DBB723 /* Assets.xcassets */; };
-		2D25313324AEB8C500DBB723 /* Shorelines Script Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D25313224AEB8C500DBB723 /* Shorelines Script Bold.otf */; };
-		2D25313424AEB8C500DBB723 /* Shorelines Script Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D25313224AEB8C500DBB723 /* Shorelines Script Bold.otf */; };
+		2D81562C24B55D6000FD2084 /* sweet purple.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D81562B24B55D5F00FD2084 /* sweet purple.otf */; };
+		2D81562D24B55D6000FD2084 /* sweet purple.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D81562B24B55D5F00FD2084 /* sweet purple.otf */; };
 		2D93EE7424B381DE008A7E5C /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93EE7324B381DE008A7E5C /* Clothes.swift */; };
 		2D93EE7524B381DE008A7E5C /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93EE7324B381DE008A7E5C /* Clothes.swift */; };
 		2DA97F5B24AECED6009B609E /* barcelona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DA97F5A24AECED6009B609E /* barcelona.ttf */; };
@@ -40,10 +40,9 @@
 		2D25312024AEB5D200DBB723 /* WeatherClothes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherClothes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D25312224AEB5D200DBB723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D25312324AEB5D200DBB723 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		2D25313224AEB8C500DBB723 /* Shorelines Script Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shorelines Script Bold.otf"; sourceTree = "<group>"; };
+		2D81562B24B55D5F00FD2084 /* sweet purple.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sweet purple.otf"; sourceTree = "<group>"; };
 		2D93EE7324B381DE008A7E5C /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		2DA97F5A24AECED6009B609E /* barcelona.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = barcelona.ttf; sourceTree = "<group>"; };
-		2DBB4B7624AEB9F100A3ED85 /* Shorelines Script Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shorelines Script Bold.otf"; sourceTree = "<group>"; };
 		2DD8CD2924B408B800D0C540 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		2DED2B1624B3C02300F86192 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		338B23EF256AB727F6A9EFCF /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,8 +102,6 @@
 				2D93EE7324B381DE008A7E5C /* Clothes.swift */,
 				2DD8CD2924B408B800D0C540 /* Weather.swift */,
 				2D100A1624B4A0FF002E6DD7 /* WeatherList.swift */,
-				2DA97F5A24AECED6009B609E /* barcelona.ttf */,
-				2D25313224AEB8C500DBB723 /* Shorelines Script Bold.otf */,
 				2D25311324AEB5D200DBB723 /* Assets.xcassets */,
 				2DED2B1624B3C02300F86192 /* Colors.xcassets */,
 			);
@@ -140,7 +137,8 @@
 		2DBB4B7524AEB9DC00A3ED85 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				2DBB4B7624AEB9F100A3ED85 /* Shorelines Script Bold.otf */,
+				2DA97F5A24AECED6009B609E /* barcelona.ttf */,
+				2D81562B24B55D5F00FD2084 /* sweet purple.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -153,7 +151,6 @@
 				E79EF65C1DCD08233E40582D /* Pods-macOS.debug.xcconfig */,
 				338B23EF256AB727F6A9EFCF /* Pods-macOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -242,7 +239,7 @@
 				2DA97F5B24AECED6009B609E /* barcelona.ttf in Resources */,
 				2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */,
 				2D25312824AEB5D200DBB723 /* Assets.xcassets in Resources */,
-				2D25313324AEB8C500DBB723 /* Shorelines Script Bold.otf in Resources */,
+				2D81562C24B55D6000FD2084 /* sweet purple.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +250,7 @@
 				2DA97F5C24AECED6009B609E /* barcelona.ttf in Resources */,
 				2DED2B1824B3C02300F86192 /* Colors.xcassets in Resources */,
 				2D25312924AEB5D200DBB723 /* Assets.xcassets in Resources */,
-				2D25313424AEB8C500DBB723 /* Shorelines Script Bold.otf in Resources */,
+				2D81562D24B55D6000FD2084 /* sweet purple.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

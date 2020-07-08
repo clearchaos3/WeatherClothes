@@ -12,17 +12,18 @@ import Keys
 let keys = WeatherClothesKeys()
 let appid = keys.appid
 
-
 struct ContentView: View {
-    @State var min: Float = 0.0
-    @State var max: Float = 0.0
-    @State var description = ""
+    @State var morn: Float = 65.0
+    @State var day: Float = 70.0
+    @State var eve: Float = 72.0
+    @State var night: Float = 68.0
+    @State var description = "partly cloudy"
+    @State var weatherType = "hot"
     
     var clothing: [Clothing] = []
     
     func getWeatherData() {
         let jsonURLString = "https://api.openweathermap.org/data/2.5/onecall?lat=38.7892&lon=-90.3226&exclude=current,minutely,hourly&units=imperial&appid=" + String(appid)
-        
         
         // make URL
         guard let url = URL(string: jsonURLString) else { return }
@@ -36,9 +37,20 @@ struct ContentView: View {
         guard let data = data else { return }
         do {
             let weather = try JSONDecoder().decode(JSON.self, from: data)
-            self.min = (weather.daily?[0].temp?.min) ?? 0.0
-            self.max = (weather.daily?[0].temp?.max) ?? 0.0
+            self.morn = (weather.daily?[0].feels_like?.morn) ?? 0.0
+            self.day = (weather.daily?[0].feels_like?.day) ?? 0.0
+            self.eve = (weather.daily?[0].feels_like?.eve) ?? 0.0
+            self.night = (weather.daily?[0].feels_like?.night) ?? 0.0
             self.description = (weather.daily?[0].weather?[0].description) ?? ""
+            
+            switch self.day {
+                case 0...32: self.weatherType = "freezing"
+                case 32...50: self.weatherType = "cold"
+                case 50...70: self.weatherType = "fair"
+                case 70...80: self.weatherType = "warm"
+                case 80...: self.weatherType = "hot"
+                default: self.weatherType = "n/a"
+            }
         } catch let err {
             print ("Json Err", err)
         }
@@ -51,53 +63,54 @@ struct ContentView: View {
             Color("background")
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                HStack{
-                    VStack{
-                        Image(systemName: "sun.max")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                    }
-                    VStack{
-                        HStack{
-                            Text("Today will be . . .")
-                                .foregroundColor(Color("brownTitle"))
+                VStack{
+                    Text("Today will be . . .")
+                        .foregroundColor(Color("brownTitle"))
+                    HStack{
+                        Spacer()
+                        VStack {
+                            Image(systemName: "sunrise")
+                            Text("\(self.morn, specifier: "%.0f")")
                         }
-                        VStack{
-                            HStack{
-                                HStack{
-                                    Image(systemName: "arrow.up")
-                                        .resizable()
-                                        .frame(width: 25.0, height: 35.0)
-                                    Text("\(self.max, specifier: "%.0f")")
-                                        .multilineTextAlignment(.leading)
-                                }
-                                .foregroundColor(Color("maxBlue"))
-
-                                Text(self.description.capitalized)
-                                    .font(.custom("barcelona", size: 35))
-                                    .multilineTextAlignment(.trailing)
-                            }
-                            HStack{
-                                HStack{
-                                    Image(systemName: "arrow.down")
-                                        .resizable()
-                                        .frame(width: 25.0, height: 35.0)
-                                    Text("\(self.min, specifier: "%.0f")")
-                                        .multilineTextAlignment(.leading)
-                                }
-                                .foregroundColor(Color("minBlue"))
-
-                                Text("Rain : 0 %")
-                                    .font(.custom("barcelona", size: 35))
-                                    .multilineTextAlignment(.trailing)
-                            }
+                        .foregroundColor(Color("minBlue"))
+                        Spacer()
+                        VStack {
+                            Image(systemName: "sun.max")
+                            Text("\(self.day, specifier: "%.0f")")
                         }
+                        .foregroundColor(.yellow)
+                        Spacer()
+                        VStack {
+                            Image(systemName: "sunset")
+                            Text("\(self.eve, specifier: "%.0f")")
+                        }
+                        .foregroundColor(.orange)
+                        Spacer()
+                        VStack {
+                            Image(systemName: "moon")
+                            Text("\(self.night, specifier: "%.0f")")
+                        }
+                        .foregroundColor(Color("brownTitle"))
+                        Spacer()
                     }
+                    HStack {
+                        Spacer()
+                        Text("\(self.description.capitalized)")
+                            .foregroundColor(.blue)
+                        Spacer()
+                        Text("\(self.weatherType.capitalized)")
+                            .foregroundColor(.orange)
+                        Spacer()
+                    }
+                    .font(.custom("sweet purple", size: 50))
+                    .opacity(0.5)
                 }
                 .padding()
-                .font(.custom("barcelona", size: 50))
+                .font(.custom("sweet purple", size: 50))
                 .foregroundColor(.white)
+                
                 Spacer()
+                
                 VStack{
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 16)],spacing: 16) {
                         ForEach(clothing) { clothing in
@@ -112,7 +125,7 @@ struct ContentView: View {
                 VStack {
                     Text("Don't forget your sunglasses!")
                         .foregroundColor(Color("purpleAccent"))
-                        .font(.custom("barcelona", size: 40))
+                        .font(.custom("sweet purple", size: 40))
                 }
             }
         }
@@ -130,7 +143,6 @@ struct ClothingCell: View {
                 .frame(width: 100, height: 100)
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

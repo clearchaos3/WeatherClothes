@@ -17,9 +17,5 @@ struct Clothing: Identifiable {
 let testData = [
     Clothing(name: "T-Shirt", imageName: "011-shirt"),
     Clothing(name: "Jeans", imageName: "025-jeans"),
-    Clothing(name: "Sun Hat", imageName: "111-pamela"),
-    Clothing(name: "T-Shirt", imageName: "011-shirt"),
-    Clothing(name: "Jeans", imageName: "025-jeans"),
-    Clothing(name: "Sun Hat", imageName: "111-pamela"),
-    Clothing(name: "T-Shirt", imageName: "011-shirt")
+    Clothing(name: "Sun Hat", imageName: "111-pamela")
 ]

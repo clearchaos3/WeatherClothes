@@ -7,17 +7,20 @@
 
 import SwiftUI
 
-struct Temp : Decodable {
-    let min: Float?
-    let max: Float?
+struct Feels_Like : Decodable {
+    let morn: Float?
+    let day: Float?
+    let eve: Float?
+    let night: Float?
 }
 
 struct Weather : Decodable {
     let description: String?
+    let weatherType: String?
 }
 
 struct Daily : Decodable {
-    let temp : Temp?
+    let feels_like : Feels_Like?
     let weather : [Weather]?
 }
 
