@@ -22,6 +22,7 @@ struct Weather : Decodable {
 struct Daily : Decodable {
     let feels_like : Feels_Like?
     let weather : [Weather]?
+    let rain : CGFloat?
 }
 
 struct JSON : Decodable {
