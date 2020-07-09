@@ -24,6 +24,7 @@ struct ContentView: View {
     var clothing: [Clothing] = []
     
     func getWeatherData() {
+        
         let jsonURLString = "https://api.openweathermap.org/data/2.5/onecall?lat=38.7892&lon=-90.3226&exclude=current,minutely,hourly&units=imperial&appid=" + String(appid)
         
         // make URL
@@ -59,7 +60,6 @@ struct ContentView: View {
         // start the session
         }.resume()
     }
-    
     
     var body: some View {
         ZStack {
@@ -144,9 +144,10 @@ struct ContentView: View {
 struct ClothingCell: View {
     var clothing: Clothing
     var body: some View {
-            Image(clothing.imageName)
-                .resizable()
-                .frame(width: 100, height: 100)
+//            Image(clothing.imageName)
+//                .resizable()
+//                .frame(width: 100, height: 100)
+            Text(clothing.name)
     }
 }
 
