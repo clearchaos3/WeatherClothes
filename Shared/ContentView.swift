@@ -13,13 +13,15 @@ let keys = WeatherClothesKeys()
 let appid = keys.appid
 
 struct ContentView: View {
-    @State var morn: Float = 65.0
-    @State var day: Float = 70.0
-    @State var eve: Float = 72.0
-    @State var night: Float = 68.0
-    @State var description = "partly cloudy"
-    @State var weatherType = "hot"
+    @State var morn: Float = 0.0
+    @State var day: Float = 0.0
+    @State var eve: Float = 0.0
+    @State var night: Float = 0.0
+    @State var description = ""
+    @State var weatherType = ""
     @State var rain: CGFloat = 0.0
+    @State var clouds: Int = 0
+    @State var suggestion: String = ""
     
     var clothing: [Clothing] = []
     
@@ -45,6 +47,7 @@ struct ContentView: View {
             self.night = (weather.daily?[0].feels_like?.night) ?? 0.0
             self.description = (weather.daily?[0].weather?[0].description) ?? ""
             self.rain = (weather.daily?[0].rain) ?? 0.0
+            self.clouds = (weather.daily?[0].clouds) ?? 0
             
             switch self.day {
                 case 0...32: self.weatherType = "freezing"
@@ -54,6 +57,18 @@ struct ContentView: View {
                 case 80...: self.weatherType = "hot"
                 default: self.weatherType = "n/a"
             }
+            
+            switch self.clouds {
+                case 0...50: self.suggestion = "Don't forget your sunglasses!"
+                case 50...100: self.suggestion = "Cloudy today..."
+                default: self.suggestion = ""
+            }
+            
+            switch self.rain {
+                case 0...: self.suggestion += "\nBring an umbrella, too."
+                default: return
+            }
+            
         } catch let err {
             print ("Json Err", err)
         }
@@ -120,8 +135,10 @@ struct ContentView: View {
                 VStack{
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 16)],spacing: 16) {
                         ForEach(clothing) { clothing in
-                            ClothingCell(clothing: clothing)
-                                .frame(maxWidth: 100)
+                            if clothing.weather.contains(self.weatherType) {
+                                ClothingCell(clothing: clothing)
+                                    .frame(maxWidth: 100)
+                            }
                         }
                     }
                 }
@@ -129,9 +146,10 @@ struct ContentView: View {
                 Spacer()
                 
                 VStack {
-                    Text("Don't forget your sunglasses!")
+                    Text(self.suggestion)
                         .foregroundColor(Color(#colorLiteral(red: 0.5004656911, green: 0.3363116682, blue: 0.716204226, alpha: 1)))
                         .font(.custom("sweet purple", size: 40))
+                        .multilineTextAlignment(.center)
                 }
             }
         }
@@ -155,7 +173,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView(clothing: clothingTypes
-            ).previewDevice("iPhone 11 Pro")
+            ).previewDevice("iPhone 11")
         }
     }
 }
