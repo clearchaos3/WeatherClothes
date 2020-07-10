@@ -58,6 +58,8 @@ struct ContentView: View {
                 default: self.weatherType = "n/a"
             }
             
+//            self.weatherType = "hot"
+            
             switch self.clouds {
                 case 0...50: self.suggestion = "Don't forget your sunglasses!"
                 case 50...100: self.suggestion = "Cloudy today..."
@@ -65,7 +67,7 @@ struct ContentView: View {
             }
             
             switch self.rain {
-                case 0...: self.suggestion += "\nBring an umbrella, too."
+                case 1...: self.suggestion += "\nBring an umbrella, too."
                 default: return
             }
             
@@ -133,11 +135,13 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 
                 VStack{
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 16)],spacing: 16) {
-                        ForEach(clothing) { clothing in
-                            if clothing.weather.contains(self.weatherType) {
-                                ClothingCell(clothing: clothing)
-                                    .frame(maxWidth: 100)
+                    ScrollView{
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 16)],spacing: 16) {
+                            ForEach(clothing) { clothing in
+                                if clothing.weather.contains(self.weatherType) {
+                                    ClothingCell(clothing: clothing)
+                                        .frame(maxWidth: 100)
+                                }
                             }
                         }
                     }
@@ -162,10 +166,10 @@ struct ContentView: View {
 struct ClothingCell: View {
     var clothing: Clothing
     var body: some View {
-//            Image(clothing.imageName)
-//                .resizable()
-//                .frame(width: 100, height: 100)
-            Text(clothing.name)
+            Image(clothing.imageName)
+                .resizable()
+                .frame(width: 100, height: 100)
+//            Text(clothing.name)
     }
 }
 

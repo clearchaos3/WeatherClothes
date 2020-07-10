@@ -16,24 +16,21 @@ struct Clothing: Identifiable {
 }
 
 var clothingTypes = [
-    Clothing(name: "T-Shirt", imageName: "011-shirt", weather: ["hot","warm","fair"]),
-    Clothing(name: "Long Sleeve", imageName: "011-shirt", weather: ["fair","cold"]),
-    Clothing(name: "Sweater", imageName: "011-shirt", weather: ["cold","freezing"]),
-    Clothing(name: "Jacket", imageName: "011-shirt", weather: ["fair","cold"]),
-    Clothing(name: "Coat", imageName: "011-shirt", weather: ["cold","freezing"]),
+    Clothing(name: "T-Shirt", imageName: "tshirt", weather: ["hot","warm","fair"]),
+    Clothing(name: "Hoodie", imageName: "hoodie", weather: ["fair","cold"]),
     
-    Clothing(name: "Dress", imageName: "025-jeans", weather: ["hot","warm"]),
-    Clothing(name: "Jeans", imageName: "025-jeans", weather: ["warm","fair"]),
-    Clothing(name: "Shorts", imageName: "025-jeans", weather: ["hot","warm"]),
-    Clothing(name: "Skirt", imageName: "025-jeans", weather: ["hot","warm"]),
+    Clothing(name: "Jeans", imageName: "jeans", weather: ["warm","fair"]),
+    Clothing(name: "Shorts", imageName: "shorts", weather: ["hot","warm"]),
+    Clothing(name: "Skirt", imageName: "skirt", weather: ["hot","warm"]),
     
-    Clothing(name: "Sneakers", imageName: "111-pamela", weather: ["hot", "warm", "fair", "cold"]),
-    Clothing(name: "Sandals", imageName: "111-pamela", weather: ["hot", "warm", "fair"]),
-    Clothing(name: "Boots", imageName: "111-pamela", weather: ["fair", "cold", "freezing"]),
+    Clothing(name: "Sneaker", imageName: "sneaker", weather: ["hot", "warm", "fair", "cold"]),
+    Clothing(name: "Flip Flops", imageName: "flipflops", weather: ["hot", "warm"]),
+    Clothing(name: "Boots", imageName: "boots", weather: ["cold", "freezing"]),
     
+    Clothing(name: "Hat", imageName: "hat", weather: ["hot", "warm", "fair"]),
+    Clothing(name: "Snow Hat", imageName: "snowhat", weather: ["cold", "freezing"]),
     
-    Clothing(name: "Sun Hat", imageName: "111-pamela", weather: ["hot", "warm"]),
-    Clothing(name: "Sunglasses", imageName: "111-pamela", weather: ["hot", "warm"])
+    Clothing(name: "Sunglasses", imageName: "sunglasses", weather: ["hot", "warm"])
 ]
 
 struct Clothes_Previews: PreviewProvider {
