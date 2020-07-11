@@ -37,6 +37,7 @@
 		2D25312324AEB5D200DBB723 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		2D81562B24B55D5F00FD2084 /* sweet purple.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sweet purple.otf"; sourceTree = "<group>"; };
 		2D93EE7324B381DE008A7E5C /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		2D94ED9824BA1BCE00002805 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Shared/Assets.xcassets; sourceTree = "<group>"; };
 		2DD8CD2924B408B800D0C540 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		2DED2B1624B3C02300F86192 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		338B23EF256AB727F6A9EFCF /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS.release.xcconfig"; path = "Target Support Files/Pods-macOS/Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		2D25310B24AEB5D100DBB723 = {
 			isa = PBXGroup;
 			children = (
+				2D94ED9824BA1BCE00002805 /* Assets.xcassets */,
 				2DBB4B7524AEB9DC00A3ED85 /* Fonts */,
 				2D25311024AEB5D200DBB723 /* Shared */,
 				2D25311A24AEB5D200DBB723 /* iOS */,
@@ -228,8 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */,
 				2D25312824AEB5D200DBB723 /* Assets.xcassets in Resources */,
+				2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */,
 				2D81562C24B55D6000FD2084 /* sweet purple.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

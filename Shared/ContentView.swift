@@ -22,8 +22,10 @@ struct ContentView: View {
     @State var rain: CGFloat = 0.0
     @State var clouds: Int = 0
     @State var suggestion: String = ""
+    @State var date: Int = 0
     
     var clothing: [Clothing] = []
+    var timeInterval: Int = 86400
     
     func getWeatherData() {
         
@@ -41,13 +43,13 @@ struct ContentView: View {
         guard let data = data else { return }
         do {
             let weather = try JSONDecoder().decode(JSON.self, from: data)
-            self.morn = (weather.daily?[0].feels_like?.morn) ?? 0.0
-            self.day = (weather.daily?[0].feels_like?.day) ?? 0.0
-            self.eve = (weather.daily?[0].feels_like?.eve) ?? 0.0
-            self.night = (weather.daily?[0].feels_like?.night) ?? 0.0
-            self.description = (weather.daily?[0].weather?[0].description) ?? ""
-            self.rain = (weather.daily?[0].rain) ?? 0.0
-            self.clouds = (weather.daily?[0].clouds) ?? 0
+            self.morn = (weather.daily?[self.date].feels_like?.morn) ?? 0.0
+            self.day = (weather.daily?[self.date].feels_like?.day) ?? 0.0
+            self.eve = (weather.daily?[self.date].feels_like?.eve) ?? 0.0
+            self.night = (weather.daily?[self.date].feels_like?.night) ?? 0.0
+            self.description = (weather.daily?[self.date].weather?[0].description) ?? ""
+            self.rain = (weather.daily?[self.date].rain) ?? 0.0
+            self.clouds = (weather.daily?[self.date].clouds) ?? 0
             
             switch self.day {
                 case 0...32: self.weatherType = "freezing"
@@ -57,8 +59,6 @@ struct ContentView: View {
                 case 80...: self.weatherType = "hot"
                 default: self.weatherType = "n/a"
             }
-            
-//            self.weatherType = "hot"
             
             switch self.clouds {
                 case 0...50: self.suggestion = "Don't forget your sunglasses!"
@@ -85,8 +85,12 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack{
                 VStack{
-                    Text("Today will be . . .")
-                    
+                    HStack {
+                        Button(action: {self.date = self.date == 0 ? 1 : 0; getWeatherData()}){
+                            Text(self.date == 0 ? "Today" : "Tomorrow")
+                        }
+                        Text("will be . . .")
+                    }
                         .foregroundColor(Color(#colorLiteral(red: 0.7351343036, green: 0.4217042029, blue: 0.3151755035, alpha: 1)))
                     HStack{
                         Spacer()
@@ -117,8 +121,8 @@ struct ContentView: View {
                     }
                     HStack {
                         Spacer()
-                        Text("\(self.description.capitalized)")
-                            .foregroundColor(Color(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1)))
+                            Text("\(self.description.capitalized)")
+                                .foregroundColor(Color(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1)))
                         Spacer()
                         Text("\(self.rain, specifier: "%.1f")mm")
                             .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
@@ -169,7 +173,6 @@ struct ClothingCell: View {
             Image(clothing.imageName)
                 .resizable()
                 .frame(width: 100, height: 100)
-//            Text(clothing.name)
     }
 }
 
