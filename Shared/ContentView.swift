@@ -24,7 +24,7 @@ struct ContentView: View {
     @State var suggestion: String = ""
     @State var date: Int = 0
     
-    var clothing: [Clothing] = []
+    var clothing: [Clothing]
     
     func getWeatherData() {
         
