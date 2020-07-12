@@ -23,6 +23,8 @@ struct ContentView: View {
     @State var clouds: Int = 0
     @State var suggestion: String = ""
     @State var date: Int = 0
+    @Namespace var namespace
+    @State var rainDetail = false
     
     var clothing: [Clothing]
     
@@ -87,6 +89,7 @@ struct ContentView: View {
                     HStack {
                         Button(action: {self.date = self.date == 0 ? 1 : 0; getWeatherData()}){
                             Text(self.date == 0 ? "Today" : "Tomorrow")
+                                .matchedGeometryEffect(id: "Text", in: namespace)
                         }
                         Text("will be . . .")
                     }
@@ -120,8 +123,12 @@ struct ContentView: View {
                     }
                     HStack {
                         Spacer()
+                        Button(action: {self.rainDetail.toggle()}){
                             Text("\(self.description.capitalized)")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1)))
+                        }.sheet(isPresented: $rainDetail) {
+                            RainDetail()
+                        }
                         Spacer()
                         Text("\(self.rain, specifier: "%.1f")mm")
                             .foregroundColor(Color(#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)))
@@ -148,7 +155,7 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        .animation(.easeInOut)
+                        .animation(.spring())
                     }
                 }
                 
@@ -179,10 +186,6 @@ struct ClothingCell: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContentView(clothing: clothingTypes
-            ).previewDevice("iPhone 11")
-        }
+        ContentView(clothing: clothingTypes)
     }
 }
-

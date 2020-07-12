@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2AA872ECBB5297FCE6A72307 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E87DB01A51A3FC8C82639F /* Pods_macOS.framework */; };
+		2D0F2C0B24BB666E00299ADB /* RainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F2C0A24BB666E00299ADB /* RainDetail.swift */; };
+		2D0F2C0C24BB666E00299ADB /* RainDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F2C0A24BB666E00299ADB /* RainDetail.swift */; };
+		2D0F2C0E24BB675200299ADB /* RainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F2C0D24BB675200299ADB /* RainModel.swift */; };
+		2D0F2C0F24BB675200299ADB /* RainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0F2C0D24BB675200299ADB /* RainModel.swift */; };
 		2D25312424AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */; };
 		2D25312524AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */; };
 		2D25312624AEB5D200DBB723 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311224AEB5D200DBB723 /* ContentView.swift */; };
@@ -21,13 +24,43 @@
 		2D93EE7524B381DE008A7E5C /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93EE7324B381DE008A7E5C /* Clothes.swift */; };
 		2DD8CD2A24B408B800D0C540 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD8CD2924B408B800D0C540 /* Weather.swift */; };
 		2DD8CD2B24B408B800D0C540 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD8CD2924B408B800D0C540 /* Weather.swift */; };
+		2DE6A84424BAA98D00840691 /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6D22DEA854440AE46CE09B /* Pods_iOS.framework */; };
+		2DE6A84524BAA98D00840691 /* Pods_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6D22DEA854440AE46CE09B /* Pods_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2DE6A84724BAA99D00840691 /* Pods_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E87DB01A51A3FC8C82639F /* Pods_macOS.framework */; };
+		2DE6A84824BAA99D00840691 /* Pods_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93E87DB01A51A3FC8C82639F /* Pods_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DED2B1624B3C02300F86192 /* Colors.xcassets */; };
 		2DED2B1824B3C02300F86192 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DED2B1624B3C02300F86192 /* Colors.xcassets */; };
-		4C3ECE51A9069A49BBBC5691 /* Pods_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6D22DEA854440AE46CE09B /* Pods_iOS.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2DE6A84624BAA98D00840691 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2DE6A84524BAA98D00840691 /* Pods_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DE6A84924BAA99D00840691 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2DE6A84824BAA99D00840691 /* Pods_macOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		101C88074B6CAA67C501FA75 /* Pods-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS.debug.xcconfig"; path = "Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2D0F2C0A24BB666E00299ADB /* RainDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainDetail.swift; sourceTree = "<group>"; };
+		2D0F2C0D24BB675200299ADB /* RainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainModel.swift; sourceTree = "<group>"; };
 		2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClothesApp.swift; sourceTree = "<group>"; };
 		2D25311224AEB5D200DBB723 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D25311324AEB5D200DBB723 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3ECE51A9069A49BBBC5691 /* Pods_iOS.framework in Frameworks */,
+				2DE6A84424BAA98D00840691 /* Pods_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA872ECBB5297FCE6A72307 /* Pods_macOS.framework in Frameworks */,
+				2DE6A84724BAA99D00840691 /* Pods_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +129,8 @@
 			children = (
 				2D25311124AEB5D200DBB723 /* WeatherClothesApp.swift */,
 				2D25311224AEB5D200DBB723 /* ContentView.swift */,
+				2D0F2C0A24BB666E00299ADB /* RainDetail.swift */,
+				2D0F2C0D24BB675200299ADB /* RainModel.swift */,
 				2D93EE7324B381DE008A7E5C /* Clothes.swift */,
 				2DD8CD2924B408B800D0C540 /* Weather.swift */,
 				2D25311324AEB5D200DBB723 /* Assets.xcassets */,
@@ -161,6 +196,7 @@
 				2D25311524AEB5D200DBB723 /* Frameworks */,
 				2D25311624AEB5D200DBB723 /* Resources */,
 				43E7D7F38ED7870531E4BC4A /* [CP] Embed Pods Frameworks */,
+				2DE6A84624BAA98D00840691 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +216,7 @@
 				2D25311D24AEB5D200DBB723 /* Frameworks */,
 				2D25311E24AEB5D200DBB723 /* Resources */,
 				28EF966F8F53B890D0BFDAF0 /* [CP] Embed Pods Frameworks */,
+				2DE6A84924BAA99D00840691 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,8 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0F2C0B24BB666E00299ADB /* RainDetail.swift in Sources */,
 				2DD8CD2A24B408B800D0C540 /* Weather.swift in Sources */,
 				2D93EE7424B381DE008A7E5C /* Clothes.swift in Sources */,
+				2D0F2C0E24BB675200299ADB /* RainModel.swift in Sources */,
 				2D25312624AEB5D200DBB723 /* ContentView.swift in Sources */,
 				2D25312424AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */,
 			);
@@ -347,8 +386,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0F2C0C24BB666E00299ADB /* RainDetail.swift in Sources */,
 				2DD8CD2B24B408B800D0C540 /* Weather.swift in Sources */,
 				2D93EE7524B381DE008A7E5C /* Clothes.swift in Sources */,
+				2D0F2C0F24BB675200299ADB /* RainModel.swift in Sources */,
 				2D25312724AEB5D200DBB723 /* ContentView.swift in Sources */,
 				2D25312524AEB5D200DBB723 /* WeatherClothesApp.swift in Sources */,
 			);
