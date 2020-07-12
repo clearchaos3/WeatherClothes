@@ -25,7 +25,6 @@ struct ContentView: View {
     @State var date: Int = 0
     
     var clothing: [Clothing] = []
-    var timeInterval: Int = 86400
     
     func getWeatherData() {
         
@@ -137,6 +136,7 @@ struct ContentView: View {
                 .padding()
                 .font(.custom("sweet purple", size: 50))
                 .foregroundColor(.white)
+                .animation(.easeInOut)
                 
                 VStack{
                     ScrollView{
@@ -148,6 +148,7 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        .animation(.easeInOut)
                     }
                 }
                 

@@ -14,6 +14,7 @@
 		2D25312724AEB5D200DBB723 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D25311224AEB5D200DBB723 /* ContentView.swift */; };
 		2D25312824AEB5D200DBB723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D25311324AEB5D200DBB723 /* Assets.xcassets */; };
 		2D25312924AEB5D200DBB723 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D25311324AEB5D200DBB723 /* Assets.xcassets */; };
+		2D77AF5924BA9D53003FE219 /* Pods-iOS.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BC247158E9103E01E8C6AD72 /* Pods-iOS.release.xcconfig */; };
 		2D81562C24B55D6000FD2084 /* sweet purple.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D81562B24B55D5F00FD2084 /* sweet purple.otf */; };
 		2D81562D24B55D6000FD2084 /* sweet purple.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D81562B24B55D5F00FD2084 /* sweet purple.otf */; };
 		2D93EE7424B381DE008A7E5C /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93EE7324B381DE008A7E5C /* Clothes.swift */; };
@@ -230,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D77AF5924BA9D53003FE219 /* Pods-iOS.release.xcconfig in Resources */,
 				2D25312824AEB5D200DBB723 /* Assets.xcassets in Resources */,
 				2DED2B1724B3C02300F86192 /* Colors.xcassets in Resources */,
 				2D81562C24B55D6000FD2084 /* sweet purple.otf in Resources */,
